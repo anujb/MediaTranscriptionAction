@@ -6,9 +6,42 @@ This a a sample GitHub action to transcribe video in any issue or pull requests 
 We download the video either by inspecting an attached video format (mp4, wav, etc). Convert it to pcm16 compatible wavform and then provide a results output value containing the JSON response payload providing a detailed transcription result.
 
 ## Usage
+Create a ```.github/workflows/transcribe-media.yml``` file:
 
-TODO: 
 
+```yaml
+name: 'transcribe-media'
+on:
+  issues:
+    types:
+      - opened
+      - edited
+  issue_comment:
+    types:
+      - created
+      - edited
+  pull_request:
+    types:
+      - opened
+      - edited
+  pull_request_review_comment:
+    types:
+      - created
+      - edited
+
+jobs:
+  transcribe-media:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      #TODO: Finish input and output params
+      - name: set URI for 
+        if: ${{ github.event.pull_request.body }}
+        run: |
+          echo "::set-env name=URL_TO_ANALYZE::${{ github.event.pull_request.body }}"
+
+```
 ## Configuration 
 
 The following inputs are required:
