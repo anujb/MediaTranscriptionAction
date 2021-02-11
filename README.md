@@ -1,5 +1,5 @@
 
-# Media Transcription Action
+# Media Transcription Action 🎧
 
 Heya 👋🏽 — ever wanted to [transcribe](https://en.wikipedia.org/wiki/Transcription_software) a media (audio/video) file in a GitHub Issue or PR and wanted to transcribe the result? You might want this for searchability, content moderation, or to kickoff other workflows!
 
