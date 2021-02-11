@@ -7,12 +7,15 @@ We download the video either by inspecting an attached video format (mp4, wav, e
 
 ## Usage
 
+TODO: 
+
 ## Configuration 
 
 The following inputs are required:
 
 
-- azure-cognitive-subscription-key: A valid Azure Cognitive Service key
-- azure-cognitive-endpoint: in the Azure portal, navigate to your Cognitive Service resource > Keys and Endpoint > Endpoint (i.e. - https://centralus.api.cognitive.microsoft.com/)
-- url-to-analyze: the url or the attachment to analyze
-
+| Input      | Description |
+| ----------- | ----------- |
+| azure-cognitive-subscription-key      | A valid Azure Cognitive Service key       |
+| azure-cognitive-endpoint   | in the Azure portal, navigate to your Cognitive Service resource > Keys and Endpoint > Endpoint (i.e. - https://centralus.api.cognitive.microsoft.com/)         |
+| url-to-analyze   | the url or the attachment to analyze         |
