@@ -1,11 +1,16 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Media Transcription Action'
+description: 'Transcribes media in an Issue and PR provides the time-level stamped result.'
+author: 'anuj@devnos.com'
 inputs:
-  milliseconds: # change this
+  azure-cognitive-subscription-key:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'Azure Cognitive Services resource key found in in the Azure Portal'
+  azure-cognitive-endpoint:
+    required: true
+    description: 'Azure Cognitive Services endpoint found in in the Azure Portal'
+outputs:
+    results:
+    description: 'JSON payload of media transcription result'
 runs:
   using: 'node12'
   main: 'dist/index.js'
