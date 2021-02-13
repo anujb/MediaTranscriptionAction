@@ -4,8 +4,14 @@ import * as github from '@actions/github'
 async function run(): Promise<void> {
   try {
     const ms: string = core.getInput('milliseconds')
-    const context: string = github.context;
-    core.debug("context");
+    const context: any = github.context;
+
+    if (context.payload.pull_request == null) {
+      core.setFailed('No pull request found.');
+      return;
+    }
+
+    core.debug(`Context: ${context}`);
 
     core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
 
