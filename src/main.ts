@@ -6,8 +6,13 @@ async function run(): Promise<void> {
     const ms: string = core.getInput('milliseconds')
     const context: any = github.context;
 
-    if (context.payload.pull_request == null) {
-      core.setFailed('No pull request found.');
+    const github_env = core.getInput("GITHUB_ENV", { required: true })
+
+    core.debug(github_env)
+
+
+    if (context.payload == null) {
+      core.setFailed('No context found.');
       return;
     }
 
