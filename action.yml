@@ -8,9 +8,9 @@ inputs:
   azure-cognitive-endpoint:
     required: true
     description: 'Azure Cognitive Services endpoint found in in the Azure Portal'
-outputs:
-    results:
-    description: 'JSON payload of media transcription result'
+# outputs:
+#     results:
+#     description: 'JSON payload of media transcription result'
 runs:
   using: 'node12'
   main: 'dist/index.js'
