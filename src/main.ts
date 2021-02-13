@@ -8,7 +8,7 @@ async function run(): Promise<void> {
 
     const github_env = core.getInput("GITHUB_ENV", { required: true })
 
-    core.debug(github_env)
+    core.debug(github_env);
 
 
     if (context.payload == null) {
