@@ -31,4 +31,4 @@ jobs:
       # - name: Dump output
       #   env:
       #     OUTPUTS: ${{ toJson(steps.transcribe-media.outputs) }}
-        run: echo "$OUTPUTS"
+        # run: echo "$OUTPUTS"
