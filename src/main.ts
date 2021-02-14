@@ -6,9 +6,9 @@ async function run(): Promise<void> {
     const ms: string = core.getInput('milliseconds')
     const context: any = github.context;
 
-    const github_env = core.getInput("GITHUB_ENV", { required: true })
+    const github_env = process.env.body;
 
-    core.debug(github_env);
+    core.debug(github_env!);
 
 
     if (context.payload == null) {
