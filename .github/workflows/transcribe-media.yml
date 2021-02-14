@@ -27,17 +27,17 @@ jobs:
       - name: set text input pull request
         if: ${{ github.event.pull_request.body }}
         run: |
-          echo "body=${ github.event.pull_request.body }" >> $GITHUB_ENV
+          echo "pr_body=${ github.event.pull_request.body }" >> $GITHUB_ENV
 
       - name: set text input issue
         if: ${{ github.event.issue.body }}
         run: |
-          echo "body=${ github.event.issue.body }" >> $GITHUB_ENV
+          echo "issue_body=${ github.event.issue.body }" >> $GITHUB_ENV
 
       - name: set text input comment
         if: ${{ github.event.comment.body }}
         run: |
-          echo "body=${ github.event.comment.body }" >> $GITHUB_ENV
+          echo "comment_body=${ github.event.comment.body }" >> $GITHUB_ENV
 
       - uses: ./
         id: transcribe-media
