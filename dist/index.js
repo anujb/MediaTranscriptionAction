@@ -41,7 +41,7 @@ const github = __importStar(__webpack_require__(438));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            core.info('Starting action...');
+            core.info('Starting action console log...');
             core.debug('Starting action core debug...');
             const ms = core.getInput('milliseconds');
             core.debug(`Waiting ${ms} milliseconds ...`); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true

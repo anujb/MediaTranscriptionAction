@@ -3,7 +3,7 @@ import * as github from '@actions/github'
 
 async function run(): Promise<void> {
   try {
-    core.info('Starting action...')
+    core.info('Starting action console log...')
     core.debug('Starting action core debug...')
 
     const ms: string = core.getInput('milliseconds')
