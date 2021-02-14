@@ -11,6 +11,9 @@ async function run(): Promise<void> {
     // const octokit: github.GitHub = new github.GitHub(token)
     const octoKit = github.getOctokit(token);
 
+
+    console.log(github.context.payload);
+
     const issue = github.context.payload.issue;
     core.debug("Issue number: " + issue?.number);
 
