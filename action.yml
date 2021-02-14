@@ -4,7 +4,7 @@ author: 'anuj@devnos.com'
 inputs:
   azure-cognitive-subscription-key:
     required: true
-    description: 'Azure Cognitive Services resource key found in in the Azure Portal'
+    description: 'Azure Cognitive Services resource key found in in the Azure Portal' 
 runs:
   using: 'node12'
   main: 'dist/index.js'
