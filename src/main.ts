@@ -3,8 +3,8 @@ import * as github from '@actions/github'
 
 async function run(): Promise<void> {
   try {
-    core.info("Starting action...");
-    core.debug("Starting action...");
+    core.info('Starting action...')
+    core.debug('Starting action...')
 
     const ms: string = core.getInput('milliseconds')
     core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
@@ -15,17 +15,15 @@ async function run(): Promise<void> {
 
     core.setOutput('time', new Date().toTimeString())
 
-
-    const token = process.env['GITHUB_TOKEN'];
+    const token = process.env['GITHUB_TOKEN']
     // if (!token) return;
     // const octokit: github.GitHub = new github.GitHub(token)
-    const octoKit = github.getOctokit(token!);
+    const octoKit = github.getOctokit(token!)
 
-    console.log(github.context.payload);
+    console.log(github.context.payload)
 
-    const issue = github.context.payload.issue;
-    core.debug("Issue number: " + issue?.number);
-
+    const issue = github.context.payload.issue
+    core.debug('Issue number: ' + issue?.number)
 
     core.setOutput('time', new Date().toTimeString())
   } catch (error) {
