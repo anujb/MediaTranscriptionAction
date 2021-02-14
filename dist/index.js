@@ -42,20 +42,19 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             core.info('Starting action...');
-            core.debug('Starting action...');
+            core.debug('Starting action core debug...');
             const ms = core.getInput('milliseconds');
             core.debug(`Waiting ${ms} milliseconds ...`); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
             core.debug(new Date().toTimeString());
             yield wait(parseInt(ms, 10));
             core.debug(new Date().toTimeString());
             core.setOutput('time', new Date().toTimeString());
-            const token = process.env['GITHUB_TOKEN'];
+            // const token = process.env['GITHUB_TOKEN']
             // if (!token) return;
             // const octokit: github.GitHub = new github.GitHub(token)
-            const octoKit = github.getOctokit(token);
-            console.log(github.context.payload);
+            // const octoKit = github.getOctokit(token!)
             const issue = github.context.payload.issue;
-            core.debug('Issue number: ' + (issue === null || issue === void 0 ? void 0 : issue.number));
+            core.debug(`Issue number: ${issue === null || issue === void 0 ? void 0 : issue.number} `);
             core.setOutput('time', new Date().toTimeString());
         }
         catch (error) {

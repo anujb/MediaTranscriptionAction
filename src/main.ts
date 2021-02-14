@@ -15,11 +15,10 @@ async function run(): Promise<void> {
 
     core.setOutput('time', new Date().toTimeString())
 
-    const token = process.env['GITHUB_TOKEN']
+    // const token = process.env['GITHUB_TOKEN']
     // if (!token) return;
     // const octokit: github.GitHub = new github.GitHub(token)
-    const octoKit = github.getOctokit(token!)
-
+    // const octoKit = github.getOctokit(token!)
 
     const issue = github.context.payload.issue
     core.debug(`Issue number: ${issue?.number} `)
