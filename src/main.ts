@@ -7,10 +7,9 @@ async function run(): Promise<void> {
     core.debug("Starting action...");
 
     const token = process.env['GITHUB_TOKEN'];
-    if (!token) return;
+    // if (!token) return;
     // const octokit: github.GitHub = new github.GitHub(token)
     const octoKit = github.getOctokit(token);
-
 
     console.log(github.context.payload);
 
