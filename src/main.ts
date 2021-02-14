@@ -3,7 +3,8 @@ import * as github from '@actions/github'
 
 async function run(): Promise<void> {
   try {
-    core.info("Starting action...")
+    core.info("Starting action...");
+    core.debug("Starting action...");
 
     const token = process.env['GITHUB_TOKEN'];
     if (!token) return;
