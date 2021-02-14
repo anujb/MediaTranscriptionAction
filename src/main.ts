@@ -3,8 +3,9 @@ import * as github from '@actions/github'
 
 async function run(): Promise<void> {
   try {
+    core.debug("Starting action...");
 
-    const token = process.env['GITHUB_TOKEN']
+    const token = process.env['GITHUB_TOKEN'];
     if (!token) return;
     // const octokit: github.GitHub = new github.GitHub(token)
     const octoKit = github.getOctokit(token);
