@@ -42,6 +42,7 @@ jobs:
         id: transcribe-media
         name: "Run Transcribe Media"
         with:
+          milliseconds: 100
           azure-cognitive-subscription-key: ${{ secrets.AZURE_COGNITIVE_SUBSCRIPTION_KEY }}
       # - name: Dump output
       #   env:
