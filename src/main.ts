@@ -3,25 +3,14 @@ import * as github from '@actions/github'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    const context: any = github.context;
 
-    const github_env = process.env.issue_body;
+    const token = process.env['GITHUB_TOKEN']
+    if (!token) return;
+    // const octokit: github.GitHub = new github.GitHub(token)
+    const octoKit = github.getOctokit(token);
 
-
-    core.debug(github_env!);
-
-
-    if (context.payload == null) {
-      core.setFailed('No context found.');
-      return;
-    }
-
-    core.debug(`Context: ${context}`);
-
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-
-    core.debug(new Date().toTimeString())
+    const issue = github.context.payload.issue;
+    core.debug("Issue number: " + issue?.number);
 
 
     core.setOutput('time', new Date().toTimeString())
