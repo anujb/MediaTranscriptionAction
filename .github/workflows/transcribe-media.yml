@@ -32,7 +32,7 @@ jobs:
       - name: set text input issue
         if: ${{ github.event.issue.body }}
         run: |
-          echo "issue_body=${github.event.issue.body}" >> $GITHUB_ENV
+          echo "issue_body=${{github.event.issue.body}}" >> $GITHUB_ENV
 
       - name: set text input comment
         if: ${{ github.event.comment.body }}
